@@ -1,4 +1,4 @@
-// Global variables
+// Global variables1
 let allData = [];
 const API_URL = 'https://data.cityofnewyork.us/resource/jb7j-dtam.json';
 
