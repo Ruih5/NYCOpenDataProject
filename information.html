@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="c3-eb4b9be8.css" rel="stylesheet" type="text/css" />
+    <script src="d3-5.8.2.min-c5268e33.js"></script>
+    <script src="c3.min-d2a1f852.js"></script>
    </head>
   <body id="body">
     <script src="script.js"></script>
@@ -24,28 +27,23 @@
          <h3>Leading Cause Of Death</h3>
          <p>This page shows the leading cause,sex,race ethnicity,deaths, death rate and Age Adjusted Death Rate.
 .</p>
-           <label for="gender-filter">Gender:</label>
-             <select id="gender-filter">
-               <option value="">Gender</option>
-               <option value="M">Male</option>
-               <option value="F">Female</option>
-               <button class="button" onclick="search()">Search</button>   
-
-
-             </select>
-           <label for="race-filter">Race:</label>
-             <select id="race-filter">
-               <option value="">Race</option>
-               <option value="WNH">White Non-Hispanic</option>
-               <option value="BNH">Black Non-Hispanic</option>
-               <option value="ORE">Other Race/ Ethnicity</option>
-               <option value="NSU">Not Stated/Unknown</option>
-               <option value="API">Asian and Pacific Islander</option>
-               <option value="H">Hispanic</option>
-             </select>
-           <button class="button" onclick="search()">Search</button>   
-         </div>  
-     </div>
+     <div class="ac">
+          <h3>Line Chart</h3>
+          <p><span class="highlight">Scenario:</span> Chart analyzes average grades of Math and English courses by period. </p>
+        <a class="button" onclick="lineChart()"> Display </a>
+        </div>
+        <div class="ac">
+          <h3>Bar Chart</h3>
+          <p><span class="highlight">Scenario:</span> Chart analyzes average grades of Math and English courses by period. </p>
+          <a class="button" onclick="barChart()"> Display </a>
+        </div>
+        <div class="ac">
+          <h3>Pie Chart</h3>
+          <p><span class="highlight">Scenario:</span> Chart displays the number of course taken by subject.</p>
+          <a class="button" onclick="pieChart()"> Display </a>
+        </div>
+        
+    
 
 
      </div>
@@ -55,6 +53,8 @@
 
     </nav>
       </div>
-
+    <footer>
+        <p>Data from <a href="https://data.cityofnewyork.us/Health/Leading-Causes-of-Death-New-York-City/jb7j-dtam" target="_blank">NYC Open Data</a></p>
+    </footer>
   </body>
 </html>
