@@ -1,22 +1,17 @@
-// Global variables1
 let allData = [];
 const API_URL = 'https://data.cityofnewyork.us/resource/jb7j-dtam.json';
 
-// DOM Elements
 const yearFilter = document.getElementById('yearFilter');
 const causeFilter = document.getElementById('causeFilter');
 const dataContainer = document.getElementById('dataContainer');
 
-// Fetch data from NYC Open Data API
 async function fetchData() {
     try {
         const response = await fetch(API_URL);
         allData = await response.json();
         
-        // Initialize filters with unique values
         initializeFilters();
         
-        // Display initial data
         displayData(allData);
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -24,12 +19,10 @@ async function fetchData() {
     }
 }
 
-// Initialize filter dropdowns with unique values
 function initializeFilters() {
     const years = [...new Set(allData.map(item => item.year))].sort();
     const causes = [...new Set(allData.map(item => item.leading_cause))].sort();
 
-    // Populate year filter
     years.forEach(year => {
         const option = document.createElement('option');
         option.value = year;
@@ -37,7 +30,6 @@ function initializeFilters() {
         yearFilter.appendChild(option);
     });
 
-    // Populate cause filter
     causes.forEach(cause => {
         const option = document.createElement('option');
         option.value = cause;
@@ -46,7 +38,6 @@ function initializeFilters() {
     });
 }
 
-// Filter data based on selected criteria
 function filterData() {
     const year = yearFilter.value;
     const cause = causeFilter.value;
@@ -57,11 +48,9 @@ function filterData() {
     });
 }
 
-// Display data in card view
 function displayData(data) {
     dataContainer.innerHTML = '';
 
-    // Group data by year and cause
     const groupedData = data.reduce((acc, item) => {
         const key = `${item.year}-${item.leading_cause}`;
         if (!acc[key]) {
@@ -81,7 +70,6 @@ function displayData(data) {
         return acc;
     }, {});
 
-    // Create cards for each group
     Object.values(groupedData).forEach(group => {
         const card = document.createElement('div');
         card.className = 'data-card';
@@ -104,9 +92,7 @@ function displayData(data) {
     });
 }
 
-// Event Listeners
 yearFilter.addEventListener('change', () => displayData(filterData()));
 causeFilter.addEventListener('change', () => displayData(filterData()));
 
-// Initialize the dashboard
 fetchData(); 
