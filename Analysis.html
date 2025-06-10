@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Death Data</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+   <div id="banner" class="container center">
+      <h1> information </h1>
+    </div>
+      <div>
+                  <div class="menu">
+            <ul>
+                <li><a href="index.html" >Homepage</a></li>
+                <li><a href="Analysis.html"  >Information</a></li>
+                <li><a href="information.html"  >Analysis</a></li>
+            </ul>
+        </div>
+
+        <section class="filters-section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="yearFilter">Year:</label>
+                    <select id="yearFilter">
+                        <option value="all">All Years</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="causeFilter">Cause:</label>
+                    <select id="causeFilter">
+                        <option value="all">All Causes</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="data-section">
+            <div id="dataContainer" class="cards-container">
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>Data from <a href="https://data.cityofnewyork.us/Health/Leading-Causes-of-Death-New-York-City/jb7j-dtam" target="_blank">NYC Open Data</a></p>
+    </footer>
+
+
+    <script src="script_a.js"></script>
+</body>
+</html>
+
